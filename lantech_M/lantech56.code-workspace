@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../lantech_S_v05_0"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"cstddef": "cpp"
+		}
+	}
+}

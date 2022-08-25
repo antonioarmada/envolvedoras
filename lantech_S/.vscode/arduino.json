@@ -1,0 +1,5 @@
+{
+    "configuration": "cpu=atmega2560",
+    "board": "arduino:avr:mega",
+    "sketch": "lantech_S_v05_0.ino"
+}

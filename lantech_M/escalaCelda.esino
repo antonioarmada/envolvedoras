@@ -1,0 +1,52 @@
+//cargar en otro Arduino este codigo para establecer
+//la escala a utilizar en config.h
+// escala=valor lectura / peso real
+// https://naylampmechatronics.com/blog/25_tutorial-trasmisor-de-celda-de-carga-hx711-balanza-digital.html
+
+/*
+begin(byte PinData, byte PinClock)
+Inicializa el HX711, se puede trabajar con cualquiera de los pines.
+
+tare(byte n);
+Establece el peso actual como el peso de tara, n indica el número de lecturas que se realizan para obtener la tara, por defecto n=10;
+
+set_scale(float scale);
+Establece el valor de la escala, que es el factor de conversión para convertir valor de lectura en un valor con unidades de peso. Por defecto es scale=1;
+
+read()
+Espera hasta que el dispositivo esté listo y devuelve la lectura del ADC del HX711
+
+read_average(byte n)
+Realiza n veces la lectura del ADC y devuelve el promedio
+
+get_value(byte n)
+Devuelve el valor actual restando el peso de tara. Equivalente a (read_average() - OFFSET) . Si se especifica un valor de n, devuelve el promedio de n lecturas.
+
+get_units(byte n)
+Devuelve el valor actual restado del peso de tara y dividido por la escala. Es equivalente a (get_value()/SCALE). Si se especifica un valor de n, devuelve el promedio de n lecturas.
+*/ 
+
+#include "HX711.h"
+const int DOUT=15;
+const int CLK=16;
+
+
+HX711 balanza;
+void setup() {
+  Serial.begin(9600);
+  balanza.begin(DOUT, CLK);
+  Serial.print("Lectura del valor del ADC:t");
+  Serial.println(balanza.read());
+  Serial.println("No ponga ningún objeto sobre la balanza");
+  Serial.println("Destarando...");
+  balanza.set_scale(); //La escala por defecto es 1
+  balanza.tare(20);  //El peso actual es considerado Tara.
+  Serial.println("Coloque un peso conocido:");
+}
+
+void loop() {
+
+  Serial.print("Valor de lectura: t");
+  Serial.println(balanza.get_value(10),0);
+  delay(100);
+}

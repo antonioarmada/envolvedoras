@@ -23,14 +23,18 @@ void checkBandaFDS() {
 }
 
 void entrarEnReposo() {
-  printDebug("REPOSO", "entrando en");
-  Tx_Msg(MSG_ESTADO_REPOSO);
-  fncAyudaPeliculaInicializacion(); //probando problema de comunicacion
-  
+  fncAyudaPeliculaInicializacion(); 
+  if (miFDS.quePosicion()==0 && miTornamesa.quePosicion()==0) { // si esta en pos inicial 
+    printDebug("REPOSO", "entrando en");
+    Tx_Msg(MSG_ESTADO_REPOSO);
+  } else {
+    printDebug("ERROR", "NO HOME");
+    Tx_Msg(MSG_ERROR_NO_HOME);
   }
+}
 
 void estoyEnReposo() {
-  fcnAyudaPelicula(); //probando problema de comunicacion
+  fcnAyudaPelicula(); 
 }
 
 void fcnSetupHome() {
@@ -127,7 +131,7 @@ void fncEnvolverInicializacion() {
   } else {
      printDebug("ERROR", "NO HOME");
      Tx_Msg(MSG_ERROR_NO_HOME);
-     delay(2000); // ------------------------------------------------------------------------
+     //delay(2000); // ------------------------------------------------------------------------
      efsmEvent(reposar);
     }
   }

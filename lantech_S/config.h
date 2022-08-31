@@ -1,5 +1,5 @@
 // -- CONFIGURACIONES ----------------------------------
-const String ESTA_VERSION="S_v5.3a";
+const String ESTA_VERSION="S_v5.4a";
 const bool FORZAR_DEBUG= false;
 const int latidoTiempo = 500;
 const int HOLD_TIME_KEYPAD = 50;

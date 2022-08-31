@@ -38,11 +38,11 @@ void ejecutarComando(char msg) {
                 break;
             case MSG_ESTADO_SUBIENDO_FORAZADO: 
                 printDebug("ESTADO","FDS UP");
-                printMesajeComun("SUBIENDO","FDS");
+                printMesajeComun("SUBIENDO","FILM");
                 break;
             case MSG_ESTADO_BAJANDO_FORAZADO: 
                 printDebug("ESTADO","FDS DWN");
-                printMesajeComun("BAJANDO","FDS");
+                printMesajeComun("BAJANDO","FILM");
                 break;
             case MSG_ESTADO_GIRAR_LENTO: 
                 printDebug("ESTADO","Girar");

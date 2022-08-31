@@ -127,32 +127,41 @@ void setup() { //---------------------------------------
   Serial.println("Fin Setup " + ESTA_VERSION);
   printDebug("Fin Setup", ESTA_VERSION);
 
-  entrarEnReposo();
+  //ejecuto la funcion y no el efsmEvent porque no esta andando el loop especifico
+  // es solo para que se vea en la pantalla como se cargan las vueltas
+  //entrarEnReposo(); 
 
 }
 
 void loop() { //----------------------------------------
 
   static int timerMsgVuelasInicio= millis();
-  static int yaEnvidadoVueltas= 0;
+  static int secuenciaInicio= 0;
 
   latidoFuncion();
   checkBandaFDS();
   check_RS485();
 
-  // hago esto aca y no en Setup porque espero respuesta de DEBUG
-  // que envía el Slave y scolision
-  if (millis()-timerMsgVuelasInicio > 600 && yaEnvidadoVueltas<1) {
-    vueltasInicioUP();
-    yaEnvidadoVueltas++;
-    }
-  // espero un tiempo mayor al de TimeOut por si estaba en esa
-  if (millis()-timerMsgVuelasInicio > 1200 && yaEnvidadoVueltas<2) {
-     vueltasInicioDWN();
-     yaEnvidadoVueltas++;
-    }
-
   // efsmTriggers(); si hay
   efsmExecute();
+
+  // hago esto aca y no en Setup porque espero respuesta de DEBUG
+  // que envía el Slave y evito colision
+  // ESTA ES UNA SECUENCIA DE INICIO DE 3 PASOS
+  if (millis()-timerMsgVuelasInicio > (cuantoTiempoEsperoRespuesta+100) && secuenciaInicio==0) {
+    vueltasInicioUP();
+    secuenciaInicio=1;
+    }
+  // espero un tiempo mayor al de TimeOut por si estaba en esa
+  if (millis()-timerMsgVuelasInicio > 2*(cuantoTiempoEsperoRespuesta+100) && secuenciaInicio==1) {
+     vueltasInicioDWN();
+     secuenciaInicio=2;
+    }
+  //
+  if (millis()-timerMsgVuelasInicio > 3*(cuantoTiempoEsperoRespuesta+100) && secuenciaInicio==2) {
+     efsmEvent(reposar);
+     secuenciaInicio=3; //fin
+    }
+
 
 } // fin loop()

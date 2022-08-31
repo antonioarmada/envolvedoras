@@ -1,5 +1,5 @@
 // -- CONFIGURACIONES ----------------------------------
-const String ESTA_VERSION="M_v6.1";
+const String ESTA_VERSION="M_v6.2";
 const bool FORZAR_DEBUG= false;
 unsigned long latidoTiempo = 500;
 const float ESCALA_CELDA_DE_CARGA = 75666.66;

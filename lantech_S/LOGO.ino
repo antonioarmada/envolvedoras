@@ -31,9 +31,9 @@ static const unsigned char PROGMEM logo[] =
 
 void printLogo(){
   display.setTextColor(WHITE);
-  display.setCursor(30,50);
+  display.setCursor(41,50);
   display.print(ESTA_VERSION);
-  display.drawBitmap(20, 0, logo, 68, 46, WHITE); // display.drawBitmap(x position, y position, bitmap data, bitmap width, bitmap height, color)
+  display.drawBitmap(26, 0, logo, 68, 46, WHITE); // display.drawBitmap(x position, y position, bitmap data, bitmap width, bitmap height, color)
   display.display();
   delay(2000);
   display.clearDisplay();//BORRAR DISPLAY

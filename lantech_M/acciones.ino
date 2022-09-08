@@ -90,7 +90,7 @@ void fcnDetenerFDSyAvisar() {
 
 void fcnIniciarBajada() {
   miFDS.bajar();
-  Tx_Msg(MSG_ESTADO_SUBIENDO_FORAZADO);
+  Tx_Msg(MSG_ESTADO_BAJANDO_FORAZADO);
 }
 
 void fcnDetenerTornamesayAvisar() {

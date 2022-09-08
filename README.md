@@ -14,8 +14,7 @@ Nos llegaron 3 envolvedoras Lantech a las que les faltaba el 90% de los componen
 
 ### SOBRE EL SOFTWARE
 
-Desarrollado en C++ para las placas Arduino instaladas, en el presente respositorio la carpeta _lantech_M_ contiene el software para la placa Master (en gabinete principal) mientras que la carpeta _lantech_S_ contiene de la los paneles de mando. 
-El software de panel de mando Slave es el mismo para las tres máquinas, sin embargo en la placa Master hay una variación en el parámetro de configuración LIMITE_ERROR_FUERZA_FILM del archivo _config.h_ tal como se indica en los comentarios del archivo.
+Desarrollado en C++ para las placas Arduino instaladas, en el presente respositorio la carpeta _lantech_M_ contiene el software para la placa Master (en gabinete principal) mientras que la carpeta _lantech_S_ contiene el software de panel de mando. Este último es el mismo para las tres máquinas, sin embargo en el software correspondiente a la placa Master hay una variación en el parámetro de configuración LIMITE_ERROR_FUERZA_FILM del archivo _config.h_ tal como se indica en los comentarios del archivo.
 
 
 ### DIAGRAMAS ELECTRÓNICOS
@@ -25,9 +24,8 @@ En la carpeta _diagramas_ se incluyen diagramas electrónicos y eléctricos parc
 
 ## + INFO
 
-Comunicarse con Antonio Armada
-+54 291 4730699
-antonioarmda@gmail.com
+Comunicarse con **Antonio Armada**
++54 291 4730699 / antonioarmda@gmail.com
 
 
 

@@ -19,7 +19,11 @@ Desarrollado en C++ para las placas Arduino instaladas, en el presente resposito
 
 ### DIAGRAMAS ELÉCTRONICOS / ELÉCTRICOS
 
-En la carpeta _diagramas_ se incluyen diagramas electrónicos y eléctricos.
+Pueden encontrarse los siguientes diagramas en [este link](https://drive.google.com/drive/folders/1LIKxtBfPF05VEppYgutul-coLsBpfSoM?usp=sharing)
+* __master_semantico_actualizado.pdf__: Diagrama semántico de la placa Master.
+* __master_PCB.pdf__: serigrafía y pistas del PCB de la placa Master para referencia y fácil identificación de conexiones.
+* __fabricar_PCB_placa_Master.zip__: archivos necesarios para rehacer el PCB de la placa Master.
+* __ELECTRONICO_ORIGINAL.pdf__: diagrama eléctrico/electrónico de las conexiones originales que tenían estas máquinas de fábrica, se icluyen como referencia ya que se intentó respetar lo más posible esta configuración. Puede servir de guía.
 
 
 ## + INFO

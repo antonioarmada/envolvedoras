@@ -19,7 +19,7 @@ Desarrollado en C++ para las placas Arduino instaladas, en el presente resposito
 
 ### DIAGRAMAS ELÉCTRONICOS / ELÉCTRICOS
 
-Pueden encontrarse los siguientes diagramas en [este link](https://drive.google.com/drive/folders/1LIKxtBfPF05VEppYgutul-coLsBpfSoM?usp=sharing)
+Pueden encontrarse los siguientes diagramas en [__este link__](https://drive.google.com/drive/folders/1LIKxtBfPF05VEppYgutul-coLsBpfSoM?usp=sharing)
 * __master_semantico_actualizado.pdf__: Diagrama semántico de la placa Master.
 * __master_PCB.pdf__: serigrafía y pistas del PCB de la placa Master para referencia y fácil identificación de conexiones.
 * __fabricar_PCB_placa_Master.zip__: archivos necesarios para rehacer el PCB de la placa Master.
@@ -29,7 +29,7 @@ Pueden encontrarse los siguientes diagramas en [este link](https://drive.google.
 ### RESOLUCIÓN DE PROBLEMAS
 
 Las placas cuentan con distintos indicadores que pueden ayudar a detectar problemas.
-* La placa Master tiene un _dipswitch_ que en posición _ON_ (antes del encender la máquina) inicia la máquina modo DEBUG, por lo que en la pantalla del panel de control se pueden ver mensejes del software corriendo en esa placa. Mientras que para ver los mensajes de la placa Master, se debe conectar un diplay _OLED 128x64 1.3"_ (no incluido) en la ficha correspondiente.
+* La placa Master tiene un _dipswitch_ que en posición _ON_ (antes del encender la máquina) inicia la máquina modo DEBUG, por lo que en la pantalla del panel de control se pueden ver mensejes del software corriendo en esa placa. Mientras que para ver los mensajes de la placa Master, se debe conectar un diplay _OLED 128x64 1.3" I2C_ (no incluido) en la ficha correspondiente señalada con serigrafía en el PCB.
 * La placa Master tiene un LED con serigrafía "OK" que debe estar parpadeando (_heartbeat_) siempre que el software esté corriendo. El motivo mas común para que se detenga es la parada de emergencia que realiza al estar "abierto" el final de carrera que sensa el estado de la banda que mueve el carro de film.
 * En el Arduino del panel de control se usa el _BUILD-IN LED_ con el mismo fin. 
 * La placa Master tiene varios LEDs que indican el estado de los finales de carrera que se encuentran en la máquina, como asi tambien otro que indica la señal para la conmutación de la velocidad de giro de la tornamesa.
@@ -39,7 +39,7 @@ Las placas cuentan con distintos indicadores que pueden ayudar a detectar proble
 ## + INFO
 
 Comunicarse con **Antonio Armada**
-+54 291 4730699 / antonioarmda@gmail.com
++54 291 4730699 / antonioarmada@gmail.com
 
 
 

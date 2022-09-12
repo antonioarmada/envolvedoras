@@ -3,7 +3,7 @@ const String ESTA_VERSION="M_v6.2";
 const bool FORZAR_DEBUG= false;
 unsigned long latidoTiempo = 500;
 const float ESCALA_CELDA_DE_CARGA = 75666.66;
-const float LIMITE_ERROR_FUERZA_FILM = 0.3; //0.3 en #1 / 1.0 en #2 / 0.3 en #3
+const float LIMITE_ERROR_FUERZA_FILM = 1; //0.3 en #1 / 1.0 en #2 / 0.3 en #3
 const int LIMITE_ERROR_CICLOS_FILM = 8; // Iteraciones antes de error corte film
 const float LIMITE_FUERZA_AYUDA_PELICULA= 0.9; //
 const int TEMPORIZADOR_HIGH_AYUDA_PELICULA = 30*1000; //cto esta activo el SSR del A.P. hasta que se apaga solo
@@ -83,6 +83,7 @@ const char MSG_BOTON_POSICION_INICIAL = 'D';
 const char MSG_BOTON_PAUSA = 'N';
 const char MSG_BOTON_VUELTAS_ARRIBA = 'B';
 const char MSG_BOTON_VUELTAS_ABAJO = 'E';
-const char MSG_BOTON_BAJAR_ENVOLVIENDO = 'H'; 
+const char MSG_BOTON_BAJAR_ENVOLVIENDO = 'H';
+const char MSG_BOTON_REESTAURAR = 'I';  
 
 const char MSG_BOTON_INICIAR = 'X';

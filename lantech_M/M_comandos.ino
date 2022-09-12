@@ -35,24 +35,32 @@ void ejecutarComando(char msg){
           Tx_Msg(MSG_ESTADO_PAUSADO); 
           break;
         case MSG_BOTON_VUELTAS_ARRIBA: 
-          efsmEvent(btnPausa);
+          //efsmEvent(btnPausa);
           printDebug("VUELTAS","UP");
-          //Tx_Msg('+');
           vueltasUP(); 
           break;
         case MSG_BOTON_VUELTAS_ABAJO: 
-          efsmEvent(btnPausa);
+          //efsmEvent(btnPausa);
           printDebug("VUELTAS","DWN");
-          //Tx_Msg('-'); 
           vueltasDWN();
+          break;
+        case MSG_BOTON_REESTAURAR: 
+          printDebug("REESTARUAR","VAL.");
+          EEPROM.update(EE_DIRECCION_DWN, 1 );
+          EEPROM.update(EE_DIRECCION_UP, 1 );
+          EEPROM.update(EE_DIRECCION_BAJAR_ENVOLVIENDO, 0 );
+          //rearmo la secuencia de inicio para que mande ordenado el nro de vuelas
+          timerMsgVuelasInicio= millis();
+          secuenciaInicio= 0;
           break;
         case MSG_BOTON_BAJAR_ENVOLVIENDO: 
           printDebug("Boton","BajarEnv");
           bajarEnvolviendo=!bajarEnvolviendo;
           if (bajarEnvolviendo) { //aca aviso al esclavo que realmente se cambio la configuracion
+            EEPROM.update(EE_DIRECCION_BAJAR_ENVOLVIENDO, 1 );
             Tx_Msg(MSG_SETED_BAJAR_ENVOLVIENDO_TRUE);
-            // setear la eeprom --------------------------------------
           } else {
+            EEPROM.update(EE_DIRECCION_BAJAR_ENVOLVIENDO, 0 );
             Tx_Msg(MSG_SETED_BAJAR_ENVOLVIENDO_FALSE);
           }
           break;

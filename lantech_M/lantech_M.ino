@@ -72,6 +72,9 @@ bool esperandoRespuesta= false;
 long ultimoIntentoTx= millis();
 char ultimoMensajeEnviado;
 byte cantidadDeIntentosTx=0;
+//secuencia de inicio que saque del loop
+unsigned long timerMsgVuelasInicio;
+int secuenciaInicio;
 
 
 void setup() { //---------------------------------------
@@ -131,13 +134,13 @@ void setup() { //---------------------------------------
   // es solo para que se vea en la pantalla como se cargan las vueltas
   //entrarEnReposo(); 
 
+  timerMsgVuelasInicio= millis();
+  secuenciaInicio= 0;
 }
 
 void loop() { //----------------------------------------
 
-  static int timerMsgVuelasInicio= millis();
-  static int secuenciaInicio= 0;
-
+  
   latidoFuncion();
   checkBandaFDS();
   check_RS485();
@@ -159,8 +162,17 @@ void loop() { //----------------------------------------
     }
   //
   if (millis()-timerMsgVuelasInicio > 3*(cuantoTiempoEsperoRespuesta+100) && secuenciaInicio==2) {
+    bajarEnvolviendo = EEPROM.read(EE_DIRECCION_BAJAR_ENVOLVIENDO);
+    if (bajarEnvolviendo) {
+            Tx_Msg(MSG_SETED_BAJAR_ENVOLVIENDO_TRUE);
+    } else {
+            Tx_Msg(MSG_SETED_BAJAR_ENVOLVIENDO_FALSE);
+    }
+    secuenciaInicio=3; //fin
+    }
+  if (millis()-timerMsgVuelasInicio > 4*(cuantoTiempoEsperoRespuesta+100) && secuenciaInicio==3) {
      efsmEvent(reposar);
-     secuenciaInicio=3; //fin
+     secuenciaInicio=4; //fin
     }
 
 

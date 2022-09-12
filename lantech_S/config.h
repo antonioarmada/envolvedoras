@@ -40,7 +40,9 @@ const char MSG_BOTON_POSICION_INICIAL = 'D';
 const char MSG_BOTON_PAUSA = 'N';
 const char MSG_BOTON_VUELTAS_ARRIBA = 'B';
 const char MSG_BOTON_VUELTAS_ABAJO = 'E';
-const char MSG_BOTON_BAJAR_ENVOLVIENDO = 'H'; 
+const char MSG_BOTON_BAJAR_ENVOLVIENDO = 'H';
+const char MSG_BOTON_REESTAURAR = 'I';  
+
 
 const char MSG_BOTON_INICIAR = 'X';
 

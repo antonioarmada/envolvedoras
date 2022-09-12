@@ -5,9 +5,9 @@ unsigned long latidoTiempo = 500;
 const float ESCALA_CELDA_DE_CARGA = 75666.66;
 const float LIMITE_ERROR_FUERZA_FILM = 1; //0.3 en #1 / 1.0 en #2 / 0.3 en #3
 const int LIMITE_ERROR_CICLOS_FILM = 8; // Iteraciones antes de error corte film
-const float LIMITE_FUERZA_AYUDA_PELICULA= 0.9; //
+const float LIMITE_FUERZA_AYUDA_PELICULA= 1.8; // estaba 0.9 al inicio
 const int TEMPORIZADOR_HIGH_AYUDA_PELICULA = 30*1000; //cto esta activo el SSR del A.P. hasta que se apaga solo
-const int ESPERA_PARA_DAR_FILM_ENVOLVIENDO = 2*1000; // al iniciar a envolver espera esto para largar para que se tense el film
+const int ESPERA_PARA_DAR_FILM_ENVOLVIENDO = 100; // al iniciar a envolver espera esto para largar para que se tense el film
 //const int DEBOUNCE_VUELTA= 2000; // para que no cuente varias veces la vuelta de tornamesa
 const int ESPERA_AL_TERMINAR_ARRIBA= 10*1000; // tiempo para que corte el film antes de hacer HOME al terminar
 

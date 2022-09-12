@@ -11,6 +11,8 @@ Nos llegaron 3 envolvedoras Lantech a las que les faltaba el 90% de los componen
 * Repusimos sensores de proximidad inductivos faltantes.
 * Repusimos cables dañados.
 
+En el transcurso del trabajo, luego que los PCBs de las placas de control (Master) fuesen fabricados e instalados, empezamos a tener problemas con las emisiones electromagnétias generadas por los drivers de los motores que fabricó MOCBOS (únicos que se conseguían en el país para estos motores). Esto nos llevó a tener realizar algunas modificaciones en el PCB de la placa de control, a sumar un BUS de daos con módulos R485 para la comunicación con el Panel de Control y a estipular un pequeño tiempo de _hold_ en los pulsadores de mando.
+
 
 ### SOBRE EL SOFTWARE
 

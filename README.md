@@ -24,9 +24,9 @@ Pueden encontrarse los siguientes diagramas en [este link](https://drive.google.
 * __master_PCB.pdf__: serigrafía y pistas del PCB de la placa Master para referencia y fácil identificación de conexiones.
 * __fabricar_PCB_placa_Master.zip__: archivos necesarios para rehacer el PCB de la placa Master.
 * __ELECTRONICO_ORIGINAL.pdf__: diagrama eléctrico/electrónico de las conexiones originales que tenían estas máquinas de fábrica, se icluyen como referencia ya que se intentó respetar lo más posible esta configuración. Puede servir de guía.
-* __BNN-BLN Manual.pdf_ es el manual de los controladores nuevos de los motores de la Tornamesa y entrega de film. (El controlador de subida/bajada del carro de film es original)
+* __BNN-BLN Manual.pdf__ es el manual de los controladores nuevos de los motores de la Tornamesa y entrega de film. (El controlador de subida/bajada del carro de film es original)
 
-### RESOLUCION DE PROBLEMAS
+### RESOLUCIÓN DE PROBLEMAS
 
 Las placas cuentan con distintos indicadores que pueden ayudar a detectar problemas.
 * La placa Master tiene un _dipswitch_ que en posición _ON_ (antes del encender la máquina) inicia la máquina modo DEBUG, por lo que en la pantalla del panel de control se pueden ver mensejes del software corriendo en esa placa. Mientras que para ver los mensajes de la placa Master, se debe conectar un diplay _OLED 128x64 1.3"_ (no incluido) en la ficha correspondiente.

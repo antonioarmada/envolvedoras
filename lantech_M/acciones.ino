@@ -275,12 +275,12 @@ void fcnEnvolviendo() {
   static uint32_t voltajeDAC;
   static long medAnterior;
   const int Vmax= 3000;//int(3*4096/5);
-  const int Fmax= 7; //kg
+  const int Fmax= FUERZA_MAXIMA_FILM_POTENCIOMETRO; //kg era 7 lo cambie en granja
   float b = Vmax/Fmax;
   static int cuantos0fuerza; // nro de iteraciones que dio 0 la fuerza
   int lecturaPote = lecturaPote = analogRead(PIN_ENTRADA_POTE_FUERZA);
   float Fpote = map(lecturaPote, 0, 1023, 0, Fmax);
-  float Fcelda = celdaDeCarga.get_units(10); 
+  float Fcelda = celdaDeCarga.get_units(5); // cambie a de 10 a 5 para que sea mas rapido
   float dF = Fcelda - Fpote; 
   voltajeDAC = voltajeDAC + int(dF*b);
   voltajeDAC = constrain (voltajeDAC, 0 , Vmax);
@@ -349,7 +349,9 @@ int fcnAyudaPelicula() {
   const int Vmax= 1500; //1500 org
   const int Vmin= 0;
   float Fcelda = celdaDeCarga.get_units(10); 
+  //printDebug("Fuerza",String(Fcelda)); // sacar
   if (Fcelda >= LIMITE_FUERZA_AYUDA_PELICULA) { //LIMITE_FUERZA_AYUDA_PELICULA
+  printDebug("Fuerza",String(Fcelda)); // sacar
       digitalWrite(PIN_SSR_STRETCH, HIGH);
       ultimaAyuda = millis();
       if (Fcelda < LIMITE_FUERZA_AYUDA_PELICULA * 2 ){ // hice dos grados de ayuda.. para que no tire tanto.

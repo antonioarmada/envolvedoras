@@ -95,7 +95,7 @@ void setup() { //---------------------------------------
   pinMode(PIN_cambia_RXaTX, OUTPUT);
   digitalWrite(PIN_cambia_RXaTX, LOW); // modo de RS485 (DE-RE): LOW= Rx, HIGH= Tx
 
-  dac.begin(0x60); //0x60 para el modulo que compré
+  dac.begin(0x61); //0x60 para 1 y 2 y 0x61
   dac.setVoltage(0, false);
  
   display.begin(SH1106_SWITCHCAPVCC, 0x3C);
